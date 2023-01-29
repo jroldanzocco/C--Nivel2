@@ -36,6 +36,7 @@ namespace winform_app
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Pokemon nuevoPokemon = new Pokemon();
+            PokemonNegocio negocio = new PokemonNegocio();
             try
             {
                 nuevoPokemon.Numero = int.Parse(txtNumero.Text);
@@ -43,7 +44,7 @@ namespace winform_app
                 nuevoPokemon.Descripcion = txtDescripcion.Text;
                 nuevoPokemon.Tipo = (Elemento)cBoxTipo.SelectedItem;
                 nuevoPokemon.Debilidad = (Elemento)cBoxDebilidad.SelectedItem;
-                PokemonNegocio negocio = new PokemonNegocio();
+                
                 negocio.agregar(nuevoPokemon);
                 MessageBox.Show("Agregado exitosamente");
                 Close();

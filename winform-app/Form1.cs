@@ -21,6 +21,10 @@ namespace winform_app
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+        private void cargar()
+        {
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
@@ -35,7 +39,6 @@ namespace winform_app
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
         {
            
@@ -59,6 +62,7 @@ namespace winform_app
         {
             frmAltaPokemon alta = new frmAltaPokemon();
             alta.ShowDialog();
+            cargar();
         }
     }
 }
